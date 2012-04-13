@@ -8,6 +8,11 @@ abstraction of asynchronous message queues, multiple messaging patterns,
 message filtering (subscriptions), seamless access to multiple transport
 protocols and more.
 
+Atomic zeromq modifies some of the messaging guarantees that zeromq makes
+to allow differentiated publisher policies.
+The modified library allows one to set messaging policy on sockets such
+as best effort/ all or none and so on.
+
 
 Building and installation
 -------------------------
@@ -27,8 +32,7 @@ This is a modified version of zeromq which uses an atomic variation of publish s
 This means that the messages will not be silently dropped instead zeromq will accept a sendmsg
 only when the message can be delivered to all eligible recipients.
 
-Development mailing list: zeromq-dev@lists.zeromq.org
-Announcements mailing list: zeromq-announce@lists.zeromq.org
+
 
 Git repository: http://github.com/zeromq/libzmq
 
